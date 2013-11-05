@@ -1,0 +1,108 @@
+{
+    "project": {
+        "name": "elastic-client",
+        "description": "Node.js client for ElasticSearch.",
+        "version": "0.0.1",
+        "url": "http://github.com/UsabilityDynamics/node-elastic-client",
+        "logo": "http://media.usabilitydynamics.com/logo.png"
+    },
+    "files": {
+        "lib/elastic-client.js": {
+            "name": "lib/elastic-client.js",
+            "modules": {},
+            "classes": {},
+            "fors": {
+                "elastic-client": 1
+            },
+            "namespaces": {}
+        },
+        "lib/utility.js": {
+            "name": "lib/utility.js",
+            "modules": {},
+            "classes": {
+                "Utility": 1
+            },
+            "fors": {
+                "Utility": 1
+            },
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "elastic-client": {
+            "name": "elastic-client",
+            "shortname": "elastic-client",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": []
+        },
+        "Utility": {
+            "name": "Utility",
+            "shortname": "Utility",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "lib/utility.js",
+            "line": 1,
+            "description": "Utility Methods",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "lib/elastic-client.js",
+            "line": 25,
+            "description": "Instance Properties",
+            "class": "elastic-client"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 31,
+            "description": "Some Actions",
+            "class": "elastic-client"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 43,
+            "description": "Constructor Properties",
+            "class": "elastic-client"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 54,
+            "description": "Create Instance",
+            "class": "elastic-client"
+        },
+        {
+            "file": "lib/utility.js",
+            "line": 13,
+            "description": "Placeholder Method",
+            "itemtype": "method",
+            "name": "noop",
+            "class": "Utility"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nInstance Properties",
+            "line": " lib/elastic-client.js:25"
+        },
+        {
+            "message": "Missing item type\nSome Actions",
+            "line": " lib/elastic-client.js:31"
+        },
+        {
+            "message": "Missing item type\nConstructor Properties",
+            "line": " lib/elastic-client.js:43"
+        },
+        {
+            "message": "Missing item type\nCreate Instance",
+            "line": " lib/elastic-client.js:54"
+        }
+    ]
+}
