@@ -1,7 +1,7 @@
 {
     "project": {
         "name": "elastic-client",
-        "description": "Node.js client for ElasticSearch.",
+        "description": "Node.js client for ElasticSearch with Waterline ORM.",
         "version": "0.0.1",
         "url": "http://github.com/UsabilityDynamics/node-elastic-client",
         "logo": "http://media.usabilitydynamics.com/logo.png"
@@ -10,9 +10,11 @@
         "lib/elastic-client.js": {
             "name": "lib/elastic-client.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "ElasticClient": 1
+            },
             "fors": {
-                "elastic-client": 1
+                "ElasticClient": 1
             },
             "namespaces": {}
         },
@@ -30,14 +32,19 @@
     },
     "modules": {},
     "classes": {
-        "elastic-client": {
-            "name": "elastic-client",
-            "shortname": "elastic-client",
+        "ElasticClient": {
+            "name": "ElasticClient",
+            "shortname": "ElasticClient",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
-            "extension_for": []
+            "extension_for": [],
+            "file": "lib/elastic-client.js",
+            "line": 1,
+            "description": "ElasticClient\n\nhttp://github.com/UsabilityDynamics/node-elastic-client",
+            "is_constructor": 1,
+            "version": "0.1.0"
         },
         "Utility": {
             "name": "Utility",
@@ -56,27 +63,27 @@
     "classitems": [
         {
             "file": "lib/elastic-client.js",
-            "line": 25,
+            "line": 26,
             "description": "Instance Properties",
-            "class": "elastic-client"
+            "class": "ElasticClient"
         },
         {
             "file": "lib/elastic-client.js",
-            "line": 31,
+            "line": 32,
             "description": "Some Actions",
-            "class": "elastic-client"
+            "class": "ElasticClient"
         },
         {
             "file": "lib/elastic-client.js",
-            "line": 43,
+            "line": 44,
             "description": "Constructor Properties",
-            "class": "elastic-client"
+            "class": "ElasticClient"
         },
         {
             "file": "lib/elastic-client.js",
-            "line": 54,
+            "line": 55,
             "description": "Create Instance",
-            "class": "elastic-client"
+            "class": "ElasticClient"
         },
         {
             "file": "lib/utility.js",
@@ -89,20 +96,24 @@
     ],
     "warnings": [
         {
+            "message": "unknown tag: version",
+            "line": " lib/elastic-client.js:1"
+        },
+        {
             "message": "Missing item type\nInstance Properties",
-            "line": " lib/elastic-client.js:25"
+            "line": " lib/elastic-client.js:26"
         },
         {
             "message": "Missing item type\nSome Actions",
-            "line": " lib/elastic-client.js:31"
+            "line": " lib/elastic-client.js:32"
         },
         {
             "message": "Missing item type\nConstructor Properties",
-            "line": " lib/elastic-client.js:43"
+            "line": " lib/elastic-client.js:44"
         },
         {
             "message": "Missing item type\nCreate Instance",
-            "line": " lib/elastic-client.js:54"
+            "line": " lib/elastic-client.js:55"
         }
     ]
 }

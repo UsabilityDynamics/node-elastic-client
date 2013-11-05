@@ -1,6 +1,6 @@
 {
   "name": "elastic-client",
-  "description": "Node.js client for ElasticSearch.",
+  "description": "Node.js client for ElasticSearch with Waterline ORM.",
   "version": "0.0.1",
   "homepage": "http://github.com/UsabilityDynamics/node-elastic-client",
   "author": {
@@ -21,14 +21,31 @@
   "engines": {
     "node": ">=0.10.21"
   },
+  "bin": {
+    "elastic-client": "./bin/elastic-client.js"
+  },
+  "scripts": {
+    "test": "make test",
+    "install": "sh bin/shell/install.sh",
+    "publish": "sh bin/shell/publish.sh"
+  },
+  "directories": {
+    "bin": "./bin",
+    "doc": "./static/codex",
+    "lib": "./lib",
+    "schemas": "./static/schemas",
+    "examples": "./examples"
+  },
   "dependencies": {
     "auto": "git+ssh://git@github.com:UsabilityDynamics/node-auto#master",
     "lodash": "~2.2.1",
-    "waterline": "0.9.8",
-    "advanced-require": "git+ssh://git@github.com:UsabilityDynamics/node-advanced-require#master",
+    "request": "2.27.0",
+    "elastical": "0.0.12",
     "object-settings": "git+ssh://git@github.com:UsabilityDynamics/node-object-settings#master",
     "object-emitter": "git+ssh://git@github.com:UsabilityDynamics/node-object-emitter#master",
-    "object-validation": "git+ssh://git@github.com:UsabilityDynamics/node-object-validation#master"
+    "object-validation": "git+ssh://git@github.com:UsabilityDynamics/node-object-validation#master",
+    "waterline": "0.9.8",
+    "waterline-elasticsearch": "git+ssh://git@github.com:UsabilityDynamics/node-waterline-elasticsearch#master"
   },
   "devDependencies": {
     "grunt-contrib-symlink": "~0.2.0",
@@ -44,6 +61,10 @@
   },
   "keywords": [
     "elasticsearch",
+    "elastic",
+    "search",
+    "client",
+    "lucene",
     "waterline",
     "orm"
   ]

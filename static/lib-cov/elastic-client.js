@@ -28,27 +28,27 @@
     };
   }
 })();
-_$jscoverage_init(_$jscoverage, "lib/elastic-client.js",[12,13,16,17,18,21,29,47]);
-_$jscoverage_init(_$jscoverage_cond, "lib/elastic-client.js",[12]);
-_$jscoverage["lib/elastic-client.js"].source = ["/*"," * elastic-client"," * http://github.com/UsabilityDynamics/node-elastic-client"," *"," * @class elastic-client"," * @constructor"," * @version 0.1.0"," */","function Module() {","","  // Force new instance.","  if( !( this instanceof Module ) ) {","    return new Module( arguments[0], arguments[1] );","  }","","  var settings  = 'object' === typeof arguments[0] ? arguments[0] : {};","  var callback  = 'function' === typeof arguments[1] ? arguments[1] : Module.utility.noop;","  var self      = this;","","  // @chainable","  return this;","","}","","/**"," * Instance Properties"," *"," */","Object.defineProperties( Module.prototype, {","  some_action: {","    /**","     * Some Actions","     *","     * @for elastic-client","     */","    value: function some_action() {},","    enumerable: true,","    configurable: true,","    writable: true","  }","});","","/**"," * Constructor Properties"," *"," */","Object.defineProperties( module.exports = Module, {","  utility: {","    value: require( './utility' ),","    enumerable: false,","    writable: false","  },","  create: {","    /**","     * Create Instance","     *","     * @for elastic-client","     */","    value: function create() {},","    enumerable: true,","    configurable: true,","    writable: true","  }","});"];
-function Module() {
-    _$jscoverage_done("lib/elastic-client.js", 12);
-    if (_$jscoverage_done("lib/elastic-client.js", 12, !(this instanceof Module))) {
-        _$jscoverage_done("lib/elastic-client.js", 13);
-        return new Module(arguments[0], arguments[1]);
+_$jscoverage_init(_$jscoverage, "lib/elastic-client.js",[13,14,17,18,19,22,30,48]);
+_$jscoverage_init(_$jscoverage_cond, "lib/elastic-client.js",[13]);
+_$jscoverage["lib/elastic-client.js"].source = ["/**"," * ElasticClient"," *"," * http://github.com/UsabilityDynamics/node-elastic-client"," *"," * @class ElasticClient"," * @constructor"," * @version 0.1.0"," */","function ElasticClient() {","","  // Force new instance.","  if( !( this instanceof ElasticClient ) ) {","    return new ElasticClient( arguments[0], arguments[1] );","  }","","  var settings  = 'object' === typeof arguments[0] ? arguments[0] : {};","  var callback  = 'function' === typeof arguments[1] ? arguments[1] : ElasticClient.utility.noop;","  var self      = this;","","  // @chainable","  return this;","","}","","/**"," * Instance Properties"," *"," */","Object.defineProperties( ElasticClient.prototype, {","  some_action: {","    /**","     * Some Actions","     *","     * @for ElasticClient","     */","    value: function some_action() {},","    enumerable: true,","    configurable: true,","    writable: true","  }","});","","/**"," * Constructor Properties"," *"," */","Object.defineProperties( ElasticClient.exports = ElasticClient, {","  utility: {","    value: require( './utility' ),","    enumerable: false,","    writable: false","  },","  create: {","    /**","     * Create Instance","     *","     * @for ElasticClient","     */","    value: function create() {},","    enumerable: true,","    configurable: true,","    writable: true","  }","});"];
+function ElasticClient() {
+    _$jscoverage_done("lib/elastic-client.js", 13);
+    if (_$jscoverage_done("lib/elastic-client.js", 13, !(this instanceof ElasticClient))) {
+        _$jscoverage_done("lib/elastic-client.js", 14);
+        return new ElasticClient(arguments[0], arguments[1]);
     }
-    _$jscoverage_done("lib/elastic-client.js", 16);
-    var settings = "object" === typeof arguments[0] ? arguments[0] : {};
     _$jscoverage_done("lib/elastic-client.js", 17);
-    var callback = "function" === typeof arguments[1] ? arguments[1] : Module.utility.noop;
+    var settings = "object" === typeof arguments[0] ? arguments[0] : {};
     _$jscoverage_done("lib/elastic-client.js", 18);
+    var callback = "function" === typeof arguments[1] ? arguments[1] : ElasticClient.utility.noop;
+    _$jscoverage_done("lib/elastic-client.js", 19);
     var self = this;
-    _$jscoverage_done("lib/elastic-client.js", 21);
+    _$jscoverage_done("lib/elastic-client.js", 22);
     return this;
 }
 
-_$jscoverage_done("lib/elastic-client.js", 29);
-Object.defineProperties(Module.prototype, {
+_$jscoverage_done("lib/elastic-client.js", 30);
+Object.defineProperties(ElasticClient.prototype, {
     some_action: {
         value: function some_action() {},
         enumerable: true,
@@ -57,8 +57,8 @@ Object.defineProperties(Module.prototype, {
     }
 });
 
-_$jscoverage_done("lib/elastic-client.js", 47);
-Object.defineProperties(module.exports = Module, {
+_$jscoverage_done("lib/elastic-client.js", 48);
+Object.defineProperties(ElasticClient.exports = ElasticClient, {
     utility: {
         value: require("./utility"),
         enumerable: false,

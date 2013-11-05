@@ -41,7 +41,7 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
-                <li><a href="../classes/elastic-client.html">elastic-client</a></li>
+                <li><a href="../classes/ElasticClient.html">ElasticClient</a></li>
             
                 <li><a href="../classes/Utility.html">Utility</a></li>
             
@@ -88,23 +88,24 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-/*
- * elastic-client
+/**
+ * ElasticClient
+ *
  * http://github.com/UsabilityDynamics/node-elastic-client
  *
- * @class elastic-client
+ * @class ElasticClient
  * @constructor
  * @version 0.1.0
  */
-function Module() {
+function ElasticClient() {
 
   // Force new instance.
-  if( !( this instanceof Module ) ) {
-    return new Module( arguments[0], arguments[1] );
+  if( !( this instanceof ElasticClient ) ) {
+    return new ElasticClient( arguments[0], arguments[1] );
   }
 
   var settings  = &#x27;object&#x27; === typeof arguments[0] ? arguments[0] : {};
-  var callback  = &#x27;function&#x27; === typeof arguments[1] ? arguments[1] : Module.utility.noop;
+  var callback  = &#x27;function&#x27; === typeof arguments[1] ? arguments[1] : ElasticClient.utility.noop;
   var self      = this;
 
   // @chainable
@@ -116,12 +117,12 @@ function Module() {
  * Instance Properties
  *
  */
-Object.defineProperties( Module.prototype, {
+Object.defineProperties( ElasticClient.prototype, {
   some_action: {
     /**
      * Some Actions
      *
-     * @for elastic-client
+     * @for ElasticClient
      */
     value: function some_action() {},
     enumerable: true,
@@ -134,7 +135,7 @@ Object.defineProperties( Module.prototype, {
  * Constructor Properties
  *
  */
-Object.defineProperties( module.exports = Module, {
+Object.defineProperties( ElasticClient.exports = ElasticClient, {
   utility: {
     value: require( &#x27;./utility&#x27; ),
     enumerable: false,
@@ -144,7 +145,7 @@ Object.defineProperties( module.exports = Module, {
     /**
      * Create Instance
      *
-     * @for elastic-client
+     * @for ElasticClient
      */
     value: function create() {},
     enumerable: true,
