@@ -4,7 +4,7 @@ Node.js client for ElasticSearch.
 Install the module with: `npm install elastic-client`
 
 ```javascript
-require( 'elastic-client' ).create( function configure() {
+require( 'elastic-client' ).create( function configure( error ) {
 
 
 };
