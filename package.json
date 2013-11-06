@@ -33,9 +33,7 @@
     "elastic-client": "./bin/elastic-client.js"
   },
   "scripts": {
-    "test": "make test",
-    "install": "sh bin/shell/install.sh",
-    "publish": "sh bin/shell/publish.sh"
+    "test": "make test"
   },
   "directories": {
     "bin": "./bin",
