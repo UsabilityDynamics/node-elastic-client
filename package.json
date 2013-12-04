@@ -45,13 +45,17 @@
   "dependencies": {
     "auto": "git+ssh://git@github.com:UsabilityDynamics/node-auto#master",
     "lodash": "~2.2.1",
-    "request": "2.27.0",
-    "elastical": "0.0.12",
+    "request": "~2.27.0",
     "object-settings": "git+ssh://git@github.com:UsabilityDynamics/node-object-settings#master",
     "object-emitter": "git+ssh://git@github.com:UsabilityDynamics/node-object-emitter#master",
-    "object-validation": "git+ssh://git@github.com:UsabilityDynamics/node-object-validation#master",
-    "waterline": "0.9.8",
-    "waterline-elasticsearch": "git+ssh://git@github.com:UsabilityDynamics/node-waterline-elasticsearch#master"
+    "waterline": "~0.9.10",
+    "waterline-elasticsearch": "git://github.com/UsabilityDynamics/node-waterline-elasticsearch",
+    "deep-extend": "~0.2.6",
+    "async": "~0.2.9",
+    "Faker": "~0.5.11",
+    "npm": "~1.3.15",
+    "install": "~0.1.7",
+    "inflection": "~1.2.6"
   },
   "devDependencies": {
     "grunt-contrib-symlink": "~0.2.0",

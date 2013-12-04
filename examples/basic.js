@@ -3,20 +3,16 @@
  *
  * @author potanin@ud
  */
-require( 'elastic-client' ).create( function configure() {
+require( 'elastic-client' ).create( function myClient() {
 
-  // Set Port
-  this.set( 'port', 9200 );
-
-  this.on( 'connected', function connected() {
-    console.log( 'Client Connected.' );
+  // Configure.
+  this.set({
+    host: 'localhost',
+    port: 9200,
+    index: 'test-index'
   });
 
-  this.on( 'disconnected', function disconnected() {
-    console.log( 'Client Disconnected.' );
-  });
-
-  // Export
+  // Export Instance.
   module.exports = this;
 
 });
