@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/utility.js - elastic-client</title>
+    <title>lib/common/utility.js - elastic-client</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -41,7 +41,7 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
-                <li><a href="../classes/ElasticClient.html">ElasticClient</a></li>
+                <li><a href="../classes/elasticClient.html">elasticClient</a></li>
             
                 <li><a href="../classes/Utility.html">Utility</a></li>
             
@@ -84,7 +84,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: lib/utility.js</h1>
+                        <h1 class="file-heading">File: lib/common/utility.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -98,7 +98,187 @@ function Utility() {
   return Object.keys( arguments ) ? require( &#x27;lodash&#x27; ).pick.apply( null, [ Utility, Array.prototype.slice.call( arguments ) ] ) : Utility;
 }
 
+/**
+ * Utility Properties.
+ *
+ */
 Object.defineProperties( module.exports = Utility, {
+  format: {
+    /**
+     * Prototype Extender.
+     *
+     * @for Utility
+     * @method inherits
+     */
+    value: require( &#x27;util&#x27; ).format,
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  inherits: {
+    /**
+     * Prototype Extender.
+     *
+     * @for Utility
+     * @method inherits
+     */
+    value: require( &#x27;util&#x27; ).inherits,
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  objectEmitter: {
+    /**
+     * Emitter Mixin.
+     *
+     * @for Utility
+     * @method mixin
+     */
+    value: require( &#x27;object-emitter&#x27; ),
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  objectSettings: {
+    /**
+     * Settings Mixin.
+     *
+     * @for Utility
+     * @method mixin
+     */
+    value: require( &#x27;object-settings&#x27; ),
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  adapter: {
+    /**
+     * Waterline ElasticSearch Adapter.
+     *
+     * @for Utility
+     * @method adapter
+     */
+    value: require( &#x27;waterline-elasticsearch&#x27; ).create,
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  parse_url: {
+    /**
+     * Waterline ElasticSearch Adapter.
+     *
+     * @for Utility
+     * @method adapter
+     */
+    value: require( &#x27;url&#x27; ).parse,
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  pluralize: {
+    /**
+     * pluralize
+     *
+     * @for Utility
+     * @method pluralize
+     */
+    value: require( &#x27;inflection&#x27; ).pluralize,
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  dasherize: {
+    /**
+     * pluralize
+     *
+     * @for Utility
+     * @method pluralize
+     */
+    value: require( &#x27;inflection&#x27; ).dasherize,
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  singularize: {
+    /**
+     * pluralize
+     *
+     * @for Utility
+     * @method pluralize
+     */
+    value: require( &#x27;inflection&#x27; ).singularize,
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  camelize: {
+    /**
+     * pluralize
+     *
+     * @for Utility
+     * @method pluralize
+     */
+    value: require( &#x27;inflection&#x27; ).camelize,
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  request: {
+    /**
+     * Waterline ElasticSearch Adapter.
+     *
+     * @for Utility
+     * @method adapter
+     */
+    value: require( &#x27;request&#x27; ).defaults({
+      json: true
+    }),
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  apply: {
+    /**
+     * @for Utility
+     * @method apply
+     */
+    value: require( &#x27;async&#x27; ).apply,
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  createBatch: {
+    /**
+     * @for Utility
+     * @method apply
+     */
+    value: require( &#x27;auto&#x27; ).createBatch,
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  Waterline: {
+    /**
+     * @for Utility
+     * @method noop
+     */
+    value: require( &#x27;waterline&#x27; ),
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  deep_extend: {
+    /**
+     * Placeholder Method
+     *
+     * @for Utility
+     * @method noop
+     */
+    value: require( &#x27;deep-extend&#x27; ),
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
   noop: {
     /**
      * Placeholder Method

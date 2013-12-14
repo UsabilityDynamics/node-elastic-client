@@ -41,7 +41,7 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
-                <li><a href="../classes/ElasticClient.html">ElasticClient</a></li>
+                <li><a href="../classes/elasticClient.html">elasticClient</a></li>
             
                 <li><a href="../classes/Utility.html">Utility</a></li>
             
@@ -89,68 +89,568 @@
 <div class="file">
     <pre class="code prettyprint linenums">
 /**
- * ElasticClient
+ * Clastic Client
  *
- * http://github.com/UsabilityDynamics/node-elastic-client
+ * ### Events
+ * - connect( error, instance )
+ * - disconnect( error, instance )
  *
- * @class ElasticClient
+ *
+ * @param handler {Function|Object}
+ * @returns {elasticClient}
+ * @constructor
+ *
+ * @class elasticClient
  * @constructor
  * @version 0.1.0
  */
-function ElasticClient() {
+function elasticClient() {
 
-  // Force new instance.
-  if( !( this instanceof ElasticClient ) ) {
-    return new ElasticClient( arguments[0], arguments[1] );
+  // Ensure Valid Instance.
+  if( !( this instanceof elasticClient ) ) {
+    return new elasticClient( arguments[0] );
   }
 
-  var settings  = &#x27;object&#x27; === typeof arguments[0] ? arguments[0] : {};
-  var callback  = &#x27;function&#x27; === typeof arguments[1] ? arguments[1] : ElasticClient.utility.noop;
-  var self      = this;
+  // Establish Handle Method.
+  var handler =  &#x27;function&#x27; === typeof arguments[0]  ? arguments[0] : this.utility.noop;
 
-  // @chainable
-  return this;
+  // Extend handler&#x27;s prototype with elastClient, Object Emitter and Object Settings.
+  this.utility.inherits( handler, elasticClient );
+
+  // Extend Instance-Prototype.
+  Object.defineProperties( handler.prototype, {
+    event: {
+      /**
+       * Current Event.
+       *
+       * @property event
+       */
+      value: null,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    },
+    options: {
+      /**
+       * Instance Options.
+       *
+       * @property options
+       */
+      value: this.utility.objectSettings.create().set( &#x27;object&#x27; === typeof arguments[0] ? arguments[0] : {} ),
+      enumerable: false,
+      writable: true,
+      configurable: true
+    },
+    emitter: {
+      /**
+       * Instance Options.
+       *
+       * @property options
+       */
+      value: this.utility.objectEmitter.create(),
+      enumerable: false,
+      writable: true,
+      configurable: true
+    },
+    _cache: {
+      /**
+       * Object Cache.
+       *
+       * @property _cache
+       */
+      value: {},
+      enumerable: false,
+      writable: true,
+      configurable: true
+    },
+    _events: {
+      /**
+       * Instance Event Pool.
+       *
+       * @property _events
+       */
+      value: {},
+      enumerable: false,
+      writable: true,
+      configurable: true
+    },
+    _models: {
+      /**
+       * Instance Models.
+       *
+       * @property _models
+       */
+      value: {},
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+
+  handler.prototype.on( &#x27;connect&#x27;, function() {
+    // console.log( &#x27;connect&#x27; );
+  });
+
+  handler.prototype.on( &#x27;disconnect&#x27;, function() {
+    // console.log( &#x27;disconnect&#x27; );
+  });
+
+  handler.prototype.on( &#x27;document.get&#x27;, function( path, callback ) {
+    instance.request( &#x27;get&#x27;, path, null, callback );
+  });
+
+  handler.prototype.on( &#x27;document.index&#x27;, function( path, data, callback ) {
+    instance.request( &#x27;post&#x27;, path, data, callback );
+  });
+
+  // Instance Settings, extend defaults.
+  handler.prototype.options.set( this.utility.deep_extend( handler.prototype.options, elasticClient.defaults ) );
+
+  // Instantiate.
+  var instance = new handler( null, handler.prototype );
+
+  setTimeout( function() {
+    instance.emit( &#x27;connect&#x27;, null, instance );
+  }, 100 )
+
+  return instance;
 
 }
 
 /**
- * Instance Properties
+ * elasticClient Instance Properties
  *
  */
-Object.defineProperties( ElasticClient.prototype, {
-  some_action: {
+Object.defineProperties( elasticClient.prototype, {
+  on: {
     /**
-     * Some Actions
+     * Subscribe to Event.
      *
-     * @for ElasticClient
+     * @example
+     *
+     *    client.on( &#x27;connect&#x27;, function connected( error, client ) {
+     *        console.log( &#x27;Client connected to [index: %s].&#x27;, client.get( &#x27;index&#x27; ) );
+     *    });
+     *
+     * @param tag
+     * @param data
+     * @param callback
+     * @returns {*}
      */
-    value: function some_action() {},
+    value: function on( tag, callback ) {
+
+      this.emitter.on( tag, callback );
+
+      // @chainable
+      return this;
+
+    },
     enumerable: true,
     configurable: true,
     writable: true
+  },
+  emit: {
+    /**
+     * Publish to Event Type.
+     *
+     * @param tag
+     * @param data
+     * @param callback
+     * @returns {*}
+     */
+    value: function emit( tag, data, callback ) {
+
+      this.emitter.emit( tag, data, callback );
+
+      // @chainable
+      return this;
+
+    },
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  get: {
+    /**
+     * Get Option or Document.
+     *
+     * @param path
+     * @param callback
+     * @returns {*|Array|get|exports|*|get|get}
+     */
+    value: function get( path, callback ) {
+      // console.log( &#x27;get&#x27;, path );
+
+      // Get All Options.
+      if( arguments.length === 0 ) {
+        return this.options.get();
+      }
+
+      // Get Specific Option.
+      return this.options.get( path );
+
+    },
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  set: {
+    /**
+     * Set Option or Document.
+     *
+     * @param path
+     * @param data
+     * @param callback
+     * @returns {*}
+     */
+    value: function set( path, data, callback ) {
+      console.log( &#x27;set&#x27;, path );
+
+      // Set Custom Cache Object.
+      if( path === &#x27;cache&#x27; ) {
+        this._cache = data;
+      }
+
+      // Extract URL parts if plain URL is set.
+      if( path === &#x27;url&#x27; ) {
+        this.options.set( this.utility.parse_url( data ) );
+      }
+
+      this.options.set( path, data );
+
+      // @chainable
+      return this;
+
+    },
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  destroy: {
+    /**
+     * Destroy Document.
+     *
+     * @param path
+     */
+    value: function destroy( path, callback ) {
+      console.log( &#x27;destroy&#x27;, path );
+
+
+      callback();
+
+    },
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  defineModel: {
+    /**
+     * Define Model &amp; Create &quot;Collection&quot;
+     *
+     * @method defineModel
+     * @for elasticClient
+     */
+    value: function defineModel() {
+      elasticClient.debug( &#x27;defineModel: [%s].&#x27;, type );
+      // type = this.utility.dasherize( type ).toLowerCase();
+
+      var client = this;
+      var type = arguments[0].toLowerCase();
+      var schema = arguments[1] || {};
+      var callback = arguments[2];
+
+      Object.defineProperties( schema, {
+        _id: {
+          /**
+           * Document ID.
+           *
+           * @returns {string}
+           */
+          value: {
+            type: &#x27;string&#x27;,
+            index: true
+          },
+          enumerable: true,
+          configurable: true,
+          writable: true
+        },
+        _type: {
+          /**
+           * Document Type.
+           *
+           */
+          value: {
+            type: &#x27;string&#x27;,
+            default: type
+          },
+          enumerable: true,
+          configurable: true,
+          writable: false
+        },
+        _index: {
+          /**
+           * Document Index.
+           *
+           * @returns {string}
+           */
+          value: {
+            type: &#x27;string&#x27;,
+            default: schema._index,
+            value: function compute_index() {
+              console.log( &#x27;doing _index&#x27; );
+              return &#x27;&#x27;;
+            }
+          },
+          enumerable: true,
+          configurable: true
+        },
+        _version: {
+          /**
+           * Document Version.
+           *
+           * @property _version {number}
+           */
+          value: {
+            type: &#x27;string&#x27;
+          },
+          enumerable: true,
+          configurable: true,
+          writable: false
+        },
+        _parent: {
+          /**
+           * Document Parent.
+           *
+           * @property _parent {string}
+           */
+          value: {
+            type: &#x27;string&#x27;
+          },
+          enumerable: true,
+          configurable: true,
+          writable: false
+        },
+        _source: {
+          /**
+           * Document Source.
+           *
+           * @property _source {object}
+           */
+          value: {
+            type: &#x27;json&#x27;,
+            properties: {}
+          },
+          enumerable: true,
+          configurable: true,
+          writable: false
+        }
+      });
+
+      // Create Waterline Model.
+      var _collection = this.utility.Waterline.Collection.extend({
+        adapter: &#x27;elasticsearch&#x27;,
+        attributes: schema,
+        autoPK: false,
+        autoCreatedAt: false,
+        autoUpdatedAt: false,
+        hasSchema: true
+      });
+
+      var _model = new _collection({
+        tableName: this.utility.dasherize( type.toLowerCase() ),
+        adapters: { elasticsearch: this.utility.adapter({ client: this }) }
+      }, function model_ready( error, model ) {
+        console.log( &#x27;Created Waterline Model [%s].&#x27;, type, !!error );
+
+        // console.log( &#x27;model.emit&#x27;, model.emit );
+        // console.log( &#x27;model.on&#x27;, model.on);
+
+      });
+
+      // @chainable Model Instance
+      return Object.defineProperties( this._models[ type ] = _model, {
+        get: {
+          /**
+           * Get Model Document.
+           *
+           * @param id {String} Unique Identifier to get document by.
+           * @param get_result {Function} Callback function for result, if found.
+           * @method get
+           * @returns {*}
+           */
+          value: function get( id, get_result ) {
+
+            _model.findOne({
+              _index: schema._index.default,
+              _type: schema._type.default,
+              _id: id
+            }, get_result.bind( null, null ));
+
+            // @chainable
+            return this;
+
+          },
+          enumerable: true,
+          configurable: true,
+          writable: false
+        },
+        set: {
+          get: function set() {
+            return client.set;
+          },
+          configurable: true,
+          enumerable: true
+        },
+        on: {
+          get: function on() {
+            return client.on;
+          },
+          configurable: true,
+          enumerable: true
+        },
+        emit: {
+          get: function emit() {
+            return client.emit;
+          },
+          configurable: true,
+          enumerable: true
+        }
+      })
+
+    },
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  getModel: {
+    /**
+     * Load Model / Collection Instance.
+     *
+     * @method getModel
+     * @for elasticClient
+     */
+    value: function getModel( type ) {
+      elasticClient.debug( &#x27;getModel: [%s].&#x27;, type );
+      return this._models[ type ] || {};
+    },
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  search: {
+    /**
+     * General Search
+     *
+     * @method getModel
+     * @for elasticClient
+     */
+    value: function search( options, callback ) {
+      //return this.emit( &#x27;document.index&#x27;, path, data, callback );
+
+      switch( true ) {
+
+        // Specific Type &amp; ID Set.
+        case ( options._type &amp;&amp; options._id ? true : false ): {
+          // console.log( &quot;Search: Known ID and Type&quot; );
+
+          this.request( &#x27;post&#x27;, this.utility.format( &#x27;%s/%s/_search&#x27;, options._index, options._type ), {
+            filter: {
+              ids: {
+                type : options._type,
+                values: [ options._id ]
+              }
+            }
+          }, callback );
+
+        break; }
+
+        // Search Failure.
+        default: {
+          callback( new Error( &#x27;Search query not understood.&#x27; ) );
+        break; }
+
+      }
+
+    },
+    enumerable: true,
+    configurable: true,
+    writable: true
+  },
+  request: {
+    /**
+     * Request Handler.
+     *
+     * @param method
+     * @param path
+     * @param data
+     * @param callback
+     * @returns {*}
+     */
+    value: function restRequest( method, path, data ) {
+
+      var args = Array.prototype.slice.call( arguments );
+      var callback = &#x27;function&#x27; === typeof args[ args.length -1 ] ? args[ args.length -1 ] : this.utility.noop
+
+      this.utility.request({
+        url: [ &#x27;http://&#x27;, this.options.get( &#x27;host&#x27;, &#x27;localhost&#x27; ), &#x27;:&#x27;, this.options.get( &#x27;port&#x27;, 9200 ), &#x27;/&#x27;, path ].join( &#x27;&#x27; ),
+        json: true,
+        body: method == &#x27;post&#x27; ? data : null,
+        qs: method == &#x27;get&#x27; ? data : null,
+        method: method.toUpperCase()
+      }, function( error, res, body ) {
+        // console.log( &#x27;Request [%s] to [%s].&#x27;, method, res.request.uri.href, error || body );
+
+        callback( error, body );
+
+      });
+
+      return this;
+
+    },
+    enumerable: false,
+    configurable: false,
+    writable: true
+  },
+  utility: {
+    value: require( &#x27;./common/utility&#x27; ),
+    enumerable: false,
+    writable: false
   }
 });
 
 /**
- * Constructor Properties
+ * elasticClient Constructor Properties.
  *
  */
-Object.defineProperties( ElasticClient.exports = ElasticClient, {
-  utility: {
-    value: require( &#x27;./utility&#x27; ),
-    enumerable: false,
-    writable: false
-  },
+Object.defineProperties( module.exports = elasticClient, {
   create: {
     /**
      * Create Instance
      *
-     * @for ElasticClient
+     * @for elasticClient
      */
-    value: function create() {},
+    value: function create() {
+      return new elasticClient( arguments[0] || {} );
+    },
     enumerable: true,
     configurable: true,
     writable: true
+  },
+  debug: {
+    value: require( &#x27;debug&#x27; )( &#x27;elastic-client&#x27; ),
+    configurable: true,
+    enumerable: true,
+    writable: true
+  },
+  defaults: {
+    value: {
+      url: &#x27;http://localhost:9200&#x27;,
+      defaultModel: null,
+      proxy: false
+    },
+    enumerable: true,
+    writable: false,
+    configurable: true
   }
 });
     </pre>

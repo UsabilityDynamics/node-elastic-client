@@ -7,45 +7,31 @@
         "logo": "http://media.usabilitydynamics.com/logo.png"
     },
     "files": {
+        "lib/common/utility.js": {
+            "name": "lib/common/utility.js",
+            "modules": {},
+            "classes": {
+                "Utility": 1
+            },
+            "fors": {
+                "Utility": 1
+            },
+            "namespaces": {}
+        },
         "lib/elastic-client.js": {
             "name": "lib/elastic-client.js",
             "modules": {},
             "classes": {
-                "ElasticClient": 1
+                "elasticClient": 1
             },
             "fors": {
-                "ElasticClient": 1
-            },
-            "namespaces": {}
-        },
-        "lib/utility.js": {
-            "name": "lib/utility.js",
-            "modules": {},
-            "classes": {
-                "Utility": 1
-            },
-            "fors": {
-                "Utility": 1
+                "elasticClient": 1
             },
             "namespaces": {}
         }
     },
     "modules": {},
     "classes": {
-        "ElasticClient": {
-            "name": "ElasticClient",
-            "shortname": "ElasticClient",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "file": "lib/elastic-client.js",
-            "line": 1,
-            "description": "ElasticClient\n\nhttp://github.com/UsabilityDynamics/node-elastic-client",
-            "is_constructor": 1,
-            "version": "0.1.0"
-        },
         "Utility": {
             "name": "Utility",
             "shortname": "Utility",
@@ -54,66 +40,564 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "file": "lib/utility.js",
+            "file": "lib/common/utility.js",
             "line": 1,
             "description": "Utility Methods",
             "is_constructor": 1
+        },
+        "elasticClient": {
+            "name": "elasticClient",
+            "shortname": "elasticClient",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "lib/elastic-client.js",
+            "line": 1,
+            "description": "Clastic Client\n\n### Events\n- connect( error, instance )\n- disconnect( error, instance )",
+            "params": [
+                {
+                    "name": "handler",
+                    "description": "",
+                    "type": "Function|Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "ElasticClient"
+            },
+            "is_constructor": 1,
+            "version": "0.1.0"
         }
     },
     "classitems": [
         {
-            "file": "lib/elastic-client.js",
-            "line": 26,
-            "description": "Instance Properties",
-            "class": "ElasticClient"
+            "file": "lib/common/utility.js",
+            "line": 11,
+            "description": "Utility Properties.",
+            "class": "Utility"
         },
         {
-            "file": "lib/elastic-client.js",
-            "line": 32,
-            "description": "Some Actions",
-            "class": "ElasticClient"
+            "file": "lib/common/utility.js",
+            "line": 17,
+            "description": "Prototype Extender.",
+            "itemtype": "method",
+            "name": "inherits",
+            "class": "Utility"
         },
         {
-            "file": "lib/elastic-client.js",
-            "line": 44,
-            "description": "Constructor Properties",
-            "class": "ElasticClient"
+            "file": "lib/common/utility.js",
+            "line": 29,
+            "description": "Prototype Extender.",
+            "itemtype": "method",
+            "name": "inherits",
+            "class": "Utility"
         },
         {
-            "file": "lib/elastic-client.js",
-            "line": 55,
-            "description": "Create Instance",
-            "class": "ElasticClient"
+            "file": "lib/common/utility.js",
+            "line": 41,
+            "description": "Emitter Mixin.",
+            "itemtype": "method",
+            "name": "mixin",
+            "class": "Utility"
         },
         {
-            "file": "lib/utility.js",
-            "line": 13,
+            "file": "lib/common/utility.js",
+            "line": 53,
+            "description": "Settings Mixin.",
+            "itemtype": "method",
+            "name": "mixin",
+            "class": "Utility"
+        },
+        {
+            "file": "lib/common/utility.js",
+            "line": 65,
+            "description": "Waterline ElasticSearch Adapter.",
+            "itemtype": "method",
+            "name": "adapter",
+            "class": "Utility"
+        },
+        {
+            "file": "lib/common/utility.js",
+            "line": 77,
+            "description": "Waterline ElasticSearch Adapter.",
+            "itemtype": "method",
+            "name": "adapter",
+            "class": "Utility"
+        },
+        {
+            "file": "lib/common/utility.js",
+            "line": 89,
+            "description": "pluralize",
+            "itemtype": "method",
+            "name": "pluralize",
+            "class": "Utility"
+        },
+        {
+            "file": "lib/common/utility.js",
+            "line": 101,
+            "description": "pluralize",
+            "itemtype": "method",
+            "name": "pluralize",
+            "class": "Utility"
+        },
+        {
+            "file": "lib/common/utility.js",
+            "line": 113,
+            "description": "pluralize",
+            "itemtype": "method",
+            "name": "pluralize",
+            "class": "Utility"
+        },
+        {
+            "file": "lib/common/utility.js",
+            "line": 125,
+            "description": "pluralize",
+            "itemtype": "method",
+            "name": "pluralize",
+            "class": "Utility"
+        },
+        {
+            "file": "lib/common/utility.js",
+            "line": 137,
+            "description": "Waterline ElasticSearch Adapter.",
+            "itemtype": "method",
+            "name": "adapter",
+            "class": "Utility"
+        },
+        {
+            "file": "lib/common/utility.js",
+            "line": 151,
+            "itemtype": "method",
+            "name": "apply",
+            "class": "Utility"
+        },
+        {
+            "file": "lib/common/utility.js",
+            "line": 161,
+            "itemtype": "method",
+            "name": "apply",
+            "class": "Utility"
+        },
+        {
+            "file": "lib/common/utility.js",
+            "line": 171,
+            "itemtype": "method",
+            "name": "noop",
+            "class": "Utility"
+        },
+        {
+            "file": "lib/common/utility.js",
+            "line": 181,
             "description": "Placeholder Method",
             "itemtype": "method",
             "name": "noop",
             "class": "Utility"
+        },
+        {
+            "file": "lib/common/utility.js",
+            "line": 193,
+            "description": "Placeholder Method",
+            "itemtype": "method",
+            "name": "noop",
+            "class": "Utility"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 33,
+            "description": "Current Event.",
+            "itemtype": "property",
+            "name": "event",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 44,
+            "description": "Instance Options.",
+            "itemtype": "property",
+            "name": "options",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 55,
+            "description": "Instance Options.",
+            "itemtype": "property",
+            "name": "options",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 66,
+            "description": "Object Cache.",
+            "itemtype": "property",
+            "name": "_cache",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 77,
+            "description": "Instance Event Pool.",
+            "itemtype": "property",
+            "name": "_events",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 88,
+            "description": "Instance Models.",
+            "itemtype": "property",
+            "name": "_models",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 130,
+            "description": "elasticClient Instance Properties",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 136,
+            "description": "Subscribe to Event.",
+            "example": [
+                "\n\n   client.on( 'connect', function connected( error, client ) {\n       console.log( 'Client connected to [index: %s].', client.get( 'index' ) );\n   });"
+            ],
+            "params": [
+                {
+                    "name": "tag",
+                    "description": ""
+                },
+                {
+                    "name": "data",
+                    "description": ""
+                },
+                {
+                    "name": "callback",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 163,
+            "description": "Publish to Event Type.",
+            "params": [
+                {
+                    "name": "tag",
+                    "description": ""
+                },
+                {
+                    "name": "data",
+                    "description": ""
+                },
+                {
+                    "name": "callback",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 184,
+            "description": "Get Option or Document.",
+            "params": [
+                {
+                    "name": "path",
+                    "description": ""
+                },
+                {
+                    "name": "callback",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*|Array|get|exports|*|get|get"
+            },
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 208,
+            "description": "Set Option or Document.",
+            "params": [
+                {
+                    "name": "path",
+                    "description": ""
+                },
+                {
+                    "name": "data",
+                    "description": ""
+                },
+                {
+                    "name": "callback",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 240,
+            "description": "Destroy Document.",
+            "params": [
+                {
+                    "name": "path",
+                    "description": ""
+                }
+            ],
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 257,
+            "description": "Define Model & Create \"Collection\"",
+            "itemtype": "method",
+            "name": "defineModel",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 274,
+            "description": "Document ID.",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 288,
+            "description": "Document Type.",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 301,
+            "description": "Document Index.",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 318,
+            "description": "Document Version.",
+            "itemtype": "property",
+            "name": "_version",
+            "type": "Number",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 331,
+            "description": "Document Parent.",
+            "itemtype": "property",
+            "name": "_parent",
+            "type": "String",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 344,
+            "description": "Document Source.",
+            "itemtype": "property",
+            "name": "_source",
+            "type": "Object",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 383,
+            "description": "Get Model Document.",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "Unique Identifier to get document by.",
+                    "type": "String"
+                },
+                {
+                    "name": "get_result",
+                    "description": "Callback function for result, if found.",
+                    "type": "Function"
+                }
+            ],
+            "itemtype": "method",
+            "name": "get",
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 436,
+            "description": "Load Model / Collection Instance.",
+            "itemtype": "method",
+            "name": "getModel",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 451,
+            "description": "General Search",
+            "itemtype": "method",
+            "name": "getModel",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 490,
+            "description": "Request Handler.",
+            "params": [
+                {
+                    "name": "method",
+                    "description": ""
+                },
+                {
+                    "name": "path",
+                    "description": ""
+                },
+                {
+                    "name": "data",
+                    "description": ""
+                },
+                {
+                    "name": "callback",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 531,
+            "description": "elasticClient Constructor Properties.",
+            "class": "elasticClient"
+        },
+        {
+            "file": "lib/elastic-client.js",
+            "line": 537,
+            "description": "Create Instance",
+            "class": "elasticClient"
         }
     ],
     "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/elastic-client.js:1"
+        },
         {
             "message": "unknown tag: version",
             "line": " lib/elastic-client.js:1"
         },
         {
-            "message": "Missing item type\nInstance Properties",
-            "line": " lib/elastic-client.js:26"
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/elastic-client.js:136"
         },
         {
-            "message": "Missing item type\nSome Actions",
-            "line": " lib/elastic-client.js:32"
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/elastic-client.js:163"
         },
         {
-            "message": "Missing item type\nConstructor Properties",
-            "line": " lib/elastic-client.js:44"
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/elastic-client.js:184"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/elastic-client.js:208"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/elastic-client.js:274"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/elastic-client.js:301"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/elastic-client.js:383"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/elastic-client.js:490"
+        },
+        {
+            "message": "Missing item type\nUtility Properties.",
+            "line": " lib/common/utility.js:11"
+        },
+        {
+            "message": "Missing item type\nelasticClient Instance Properties",
+            "line": " lib/elastic-client.js:130"
+        },
+        {
+            "message": "Missing item type\nSubscribe to Event.",
+            "line": " lib/elastic-client.js:136"
+        },
+        {
+            "message": "Missing item type\nPublish to Event Type.",
+            "line": " lib/elastic-client.js:163"
+        },
+        {
+            "message": "Missing item type\nGet Option or Document.",
+            "line": " lib/elastic-client.js:184"
+        },
+        {
+            "message": "Missing item type\nSet Option or Document.",
+            "line": " lib/elastic-client.js:208"
+        },
+        {
+            "message": "Missing item type\nDestroy Document.",
+            "line": " lib/elastic-client.js:240"
+        },
+        {
+            "message": "Missing item type\nDocument ID.",
+            "line": " lib/elastic-client.js:274"
+        },
+        {
+            "message": "Missing item type\nDocument Type.",
+            "line": " lib/elastic-client.js:288"
+        },
+        {
+            "message": "Missing item type\nDocument Index.",
+            "line": " lib/elastic-client.js:301"
+        },
+        {
+            "message": "Missing item type\nRequest Handler.",
+            "line": " lib/elastic-client.js:490"
+        },
+        {
+            "message": "Missing item type\nelasticClient Constructor Properties.",
+            "line": " lib/elastic-client.js:531"
         },
         {
             "message": "Missing item type\nCreate Instance",
-            "line": " lib/elastic-client.js:55"
+            "line": " lib/elastic-client.js:537"
         }
     ]
 }
