@@ -49,7 +49,7 @@
     "object-settings": "git+ssh://git@github.com:UsabilityDynamics/node-object-settings#master",
     "object-emitter": "git+ssh://git@github.com:UsabilityDynamics/node-object-emitter#master",
     "waterline": "~0.9.10",
-    "waterline-elasticsearch": "git://github.com/UsabilityDynamics/node-waterline-elasticsearch",
+    "waterline-elasticsearch": "UsabilityDynamics/node-waterline-elasticsearch",
     "deep-extend": "~0.2.6",
     "async": "~0.2.9",
     "Faker": "~0.5.11",
