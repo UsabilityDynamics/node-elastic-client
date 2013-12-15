@@ -43,11 +43,11 @@
     "examples": "./examples"
   },
   "dependencies": {
-    "auto": "git+ssh://git@github.com:UsabilityDynamics/node-auto#master",
+    "auto": "UsabilityDynamics/node-auto",
     "lodash": "~2.2.1",
     "request": "~2.27.0",
-    "object-settings": "git+ssh://git@github.com:UsabilityDynamics/node-object-settings#master",
-    "object-emitter": "git+ssh://git@github.com:UsabilityDynamics/node-object-emitter#master",
+    "object-settings": "UsabilityDynamics/node-object-settings",
+    "object-emitter": "UsabilityDynamics/node-object-emitter",
     "waterline": "~0.9.10",
     "waterline-elasticsearch": "UsabilityDynamics/node-waterline-elasticsearch",
     "deep-extend": "~0.2.6",
